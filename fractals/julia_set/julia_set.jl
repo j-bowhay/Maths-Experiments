@@ -28,7 +28,7 @@ heatmap(A; c = :viridis, clims = (0, 0.15), cbar = :none, axis = :none, ticks = 
 
 cs = 0.7885 .* exp.(range(π / 2, 3π / 2; length = 50) .* im)
 anim = @animate for c in cs
-    A = juliaset.(x' .+ y .* im, c, R, N)
+    A = @. juliaset(x' + y * im, c, R, N)
     heatmap(
         A;
         c = :viridis,
@@ -39,4 +39,4 @@ anim = @animate for c in cs
         size = (800, 600),
     )
 end
-gif(anim, "fractals/julia_set/juliaset.gif", fps = 20)
+gif(anim, "fractals/julia_set/juliaset.gif", fps = 10)
