@@ -1,3 +1,10 @@
+## Dependencies
+using Pkg
+Pkg.activate(temp=true)
+Pkg.add("Plots")
+
+##
+
 using Plots
 
 L = 1500
@@ -10,7 +17,7 @@ N = 1000
 
 function juliaset(z, c, R, N)
     for n = 0:N
-        if abs(z) > R^2 - R
+        if abs(z) > R^2
             return n / N
         end
         z = z^2 + c
