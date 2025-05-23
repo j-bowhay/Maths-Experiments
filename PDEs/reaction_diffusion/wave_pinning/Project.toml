@@ -1,4 +1,10 @@
 [deps]
+BlockDiagonals = "0a1fb500-61f7-11e9-3c65-f5ef3456f9f0"
 Contour = "d38c429a-6771-53c6-b99e-75d170b6e991"
+DomainSets = "5b8099bc-c8ec-5219-889f-1d9e522a28bf"
 LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+MethodOfLines = "94925ecb-adb7-4558-8ed8-f975c56a0bf4"
+ModelingToolkit = "961ee093-0014-501f-94e3-6117800e7a78"
+OrdinaryDiffEq = "1dea7af3-3e70-54e6-95c3-0bf5283fa5ed"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+SciMLOperators = "c0aeaf25-5076-4817-a8d5-81caf7dfa961"
