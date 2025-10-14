@@ -36,12 +36,6 @@ boundary_facets = mesh.locate_entities_boundary(domain, fdim, clamped_boundary)
 u_D = np.array([0, 0, 0], dtype=default_scalar_type)
 bc = fem.dirichletbc(u_D, fem.locate_dofs_topological(V, fdim, boundary_facets), V)
 
-# Traction free
-
-T = fem.Constant(domain, default_scalar_type((0, 0, 0)))
-
-ds = ufl.Measure("ds", domain=domain)
-
 # Variational problem
 
 def epsilon(u):
@@ -63,7 +57,7 @@ f = fem.Constant(domain, default_scalar_type((0, 0, -rho * g)))
 a = ufl.inner(sigma(u), epsilon(v))*ufl.dx
 
 # Linear form
-L = ufl.dot(f, v)*ufl.dx + ufl.dot(T, v)*ds
+L = ufl.dot(f, v)*ufl.dx
 
 problem = LinearProblem(a, L, bcs=[bc],
                         petsc_options={"ksp_type": "preonly", "pc_type": "lu"})
